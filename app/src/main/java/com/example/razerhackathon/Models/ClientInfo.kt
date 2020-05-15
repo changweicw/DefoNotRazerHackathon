@@ -1,6 +1,7 @@
 package com.example.razerhackathon.Models
 
 import android.app.Activity
+import com.example.razerhackathon.db.userDAO
 import com.example.razerhackathon.global.constants
 import com.example.razerhackathon.global.sharedPref
 
@@ -25,5 +26,9 @@ class ClientInfo(
         sharedPref.putValue(constants.NRIC, NRIC)
         sharedPref.putValue(constants.EMAIL, emailAddress)
         sharedPref.commit()
+    }
+
+    fun createClient(){
+        userDAO.createUser(this)
     }
 }

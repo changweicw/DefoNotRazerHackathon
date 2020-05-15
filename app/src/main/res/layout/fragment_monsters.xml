@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MonstersFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:orientation="vertical">
+
+    <!-- Monster Status -->
+    <LinearLayout
+        android:background="@drawable/item_monster_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/egg"/>
+
+        <LinearLayout
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your monster egg is not ready"/>
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You have received a new monster! \nTap to hatch it"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <!-- Monster Status -->
+
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="20sp"
+        android:textColor="#fafafa"
+        android:textStyle="bold"
+        android:text="Your Monsters" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp" />
+
+        <Button
+        android:id="@+id/Monstie_Test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="get Monstie Test"
+        />
+    </LinearLayout>
+</FrameLayout>

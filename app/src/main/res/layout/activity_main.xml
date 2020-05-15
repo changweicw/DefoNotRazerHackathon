@@ -7,27 +7,36 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-
-
-    <Button
-        android:id="@+id/buttonTestAPI"
+    <LinearLayout
+        android:background="@color/background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Test API"/>
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/buttonTestAPI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test API"/>
 
 
-    <Button
-        android:id="@+id/buttonSignOut"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="buttonSignOut"
-        android:text="SignOut" />
+        <Button
+            android:id="@+id/buttonSignOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="buttonSignOut"
+            android:text="SignOut" />
+
+    </LinearLayout>
 
     
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
+        app:backgroundTint="#fafafa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:labelVisibilityMode="labeled"
+        android:layout_weight="0"
         app:menu="@menu/bottom_navigation_menu" />
 
 </LinearLayout>

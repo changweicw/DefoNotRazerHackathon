@@ -71,7 +71,7 @@ class SignInActivity : AppCompatActivity() {
                     MainScope().launch {
                         clientInfo = userDAO.getUser(user!!.uid)
                         clientInfo.saveSharedPreference(context)
-                        startActivity(redirectPage.mainActivity(context))
+                        startActivity(redirectPage.razerPayActivity(context))
                     }
                     // Get the document from firebase
                 } else {
