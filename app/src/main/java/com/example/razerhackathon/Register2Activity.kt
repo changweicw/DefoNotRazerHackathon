@@ -70,6 +70,7 @@ class Register2Activity : AppCompatActivity() {
 
                     // Todo: Chang Wei put your Codes here!
 
+
                     // Saving the credentials into FireStore
                     userDAO.createUser(user!!.uid, email, firstName, lastName, nric, nricExp)
                     toast.toastLong(this, "Registration Successful")
