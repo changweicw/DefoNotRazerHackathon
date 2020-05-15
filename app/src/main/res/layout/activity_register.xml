@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:id="@+id/textViewFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="First Name" />
+
+    <EditText
+        android:id="@+id/editTextFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="First Name"
+        android:text="Felix"/>
+
+    <TextView
+        android:id="@+id/textViewLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Last Name" />
+
+    <EditText
+        android:id="@+id/editTextLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Wang"
+        android:hint="Last Name" />
+
+    <TextView
+        android:id="@+id/textViewNric"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NRIC" />
+
+    <EditText
+        android:id="@+id/editTextNric"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="S9653122A"
+        android:hint="Nric" />
+
+    <TextView
+        android:id="@+id/textViewNricExp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NricExp" />
+
+    <EditText
+        android:id="@+id/editTextNricExp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/buttonNextPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonNextOnClick"
+        android:text="Next" />
+
+
+</LinearLayout>
