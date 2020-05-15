@@ -8,12 +8,13 @@
     tools:context=".MainActivity">
 
 
+
     <Button
-        android:id="@+id/buttonTestData"
+        android:id="@+id/buttonTestAPI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
-        android:onClick="addData"/>
+        android:text="Test API"/>
+
 
     <Button
         android:id="@+id/buttonSignOut"
@@ -21,10 +22,12 @@
         android:layout_height="wrap_content"
         android:onClick="buttonSignOut"
         android:text="SignOut" />
+
     
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:menu="@menu/bottom_navigation_menu" />
+
 </LinearLayout>

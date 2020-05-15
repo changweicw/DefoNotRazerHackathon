@@ -5,7 +5,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+
 import com.example.razerhackathon.global.constants.Companion.logSignIn
+
+import android.widget.Toast
+
+
 import com.example.razerhackathon.global.redirectPage
 import com.example.razerhackathon.global.toast
 import com.google.firebase.auth.FirebaseAuth

@@ -22,5 +22,8 @@ class constants {
         // Shared Preference
         val PRIVATE_MODE = 0
         val PREF_NAME = "razor-hackathon"
+
+
+        val MAMBU_ACCESS = "VGVhbTg2OnBhc3NDQzdERjNBM0I="
     }
 }
