@@ -10,9 +10,9 @@ import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.razerhackathon.db.testDAO
-import com.squareup.okhttp.ConnectionSpec
-import com.squareup.okhttp.OkHttpClient
-
+import com.example.razerhackathon.global.redirectPage
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
@@ -63,6 +63,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+    }
+
+
+    fun buttonSignOut(view: View) {
+        Firebase.auth.signOut()
+        startActivity(redirectPage.signInActivity(this))
+        finish()
     }
 
 }
