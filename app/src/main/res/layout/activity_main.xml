@@ -14,14 +14,13 @@
         android:layout_height="wrap_content"
         android:text="Button"
         android:onClick="addData"/>
-<<<<<<< HEAD
+
     <Button
         android:id="@+id/buttonTestAPI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Test API"/>
 
-=======
 
     <Button
         android:id="@+id/buttonSignOut"
@@ -29,5 +28,5 @@
         android:layout_height="wrap_content"
         android:onClick="buttonSignOut"
         android:text="SignOut" />
->>>>>>> a03aaa158048739534fc0fb1a86e22d56ec4a42a
+
 </LinearLayout>

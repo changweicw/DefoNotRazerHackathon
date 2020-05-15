@@ -1,7 +1,7 @@
 package com.example.razerhackathon.db
 
 import android.util.Log
-import com.example.razerhackathon.constants
+import com.example.razerhackathon.CONSTANTS
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -21,10 +21,10 @@ class testDAO {
             db.collection("users")
                 .add(user)
                 .addOnSuccessListener { documentReference ->
-                    Log.d(constants.logTestDAO, "DocumentSnapshot added with ID: ${documentReference.id}")
+                    Log.d(CONSTANTS.logTestDAO, "DocumentSnapshot added with ID: ${documentReference.id}")
                 }
                 .addOnFailureListener { e ->
-                    Log.w(constants.logTestDAO, "Error adding document", e)
+                    Log.w(CONSTANTS.logTestDAO, "Error adding document", e)
                 }
         }
 
