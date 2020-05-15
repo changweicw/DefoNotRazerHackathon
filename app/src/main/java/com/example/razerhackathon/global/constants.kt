@@ -3,6 +3,7 @@ package com.example.razerhackathon.global
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
+
 class constants {
     companion object{
         val logTestDAO = "TestDAO_LOG"
@@ -25,5 +26,12 @@ class constants {
 
 
         val MAMBU_ACCESS = "VGVhbTg2OnBhc3NDQzdERjNBM0I="
+
+
+        // Monstie Rarity
+        val COMMON = 1
+        val RARE = 2
+        val EPIC = 3
+        val LEGENDARY = 4
     }
 }

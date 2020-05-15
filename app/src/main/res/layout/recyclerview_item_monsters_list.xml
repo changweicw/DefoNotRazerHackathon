@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:elevation="5dp"
+    android:layout_marginTop="10dp"
+    android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/imgMostie"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/egg"/>
+
+        <LinearLayout
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewMonstieName"
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Monster Name"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/imgStar1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/search"/>
+
+                <ImageView
+                    android:id="@+id/imgStar2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/search"/>
+
+                <ImageView
+                    android:id="@+id/imgStar3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/search"/>
+
+                <ImageView
+                    android:id="@+id/imgStar4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/search"/>
+
+                <ImageView
+                    android:id="@+id/imgStar5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/search"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/textViewMonstieDescription"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The most gangster slime within his area. He is definately up to kick some butts"/>
+
+        </LinearLayout>
+</LinearLayout>

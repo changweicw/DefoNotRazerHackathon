@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.example.razerhackathon.Models.ClientInfo
 import com.example.razerhackathon.db.userDAO
 import com.example.razerhackathon.global.constants
 import com.example.razerhackathon.global.redirectPage
@@ -72,21 +73,13 @@ class Register2Activity : AppCompatActivity() {
 
 
                     // Saving the credentials into FireStore
-                    userDAO.createUser(user!!.uid, email, firstName, lastName, nric, nricExp)
                     toast.toastLong(this, "Registration Successful")
-
-                    // Saving it into shared preferences
-                    val sharedPref = sharedPref(this)
-                    sharedPref.putValue(constants.USERNAME, user!!.uid)
-                    sharedPref.putValue(constants.LAST_NAME, lastName)
-                    sharedPref.putValue(constants.FIRST_NAME, firstName)
-                    sharedPref.putValue(constants.NRIC_EXP, nricExp)
-                    sharedPref.putValue(constants.NRIC, nric)
-                    sharedPref.putValue(constants.EMAIL, email)
-                    sharedPref.commit()
+                    var clientInfo = ClientInfo(userId = user!!.uid, emailAddress = email, firstName = firstName, lastName = lastName, NRIC = nric, NRIC_Issued = nricExp)
+                    clientInfo.createClient()
+                    clientInfo.saveSharedPreference(this)
 
                     // Redirecting to next page.
-                    startActivity(redirectPage.mainActivity(this))
+                    startActivity(redirectPage.razerPayActivity(this))
 
                 } else {
                     // If sign in fails, display a message to the user.

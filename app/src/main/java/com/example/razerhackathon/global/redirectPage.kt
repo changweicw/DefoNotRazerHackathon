@@ -3,10 +3,7 @@ package com.example.razerhackathon.global
 import android.content.Context
 import android.content.Intent
 import androidx.core.content.ContextCompat.startActivity
-import com.example.razerhackathon.MainActivity
-import com.example.razerhackathon.Register2Activity
-import com.example.razerhackathon.RegisterActivity
-import com.example.razerhackathon.SignInActivity
+import com.example.razerhackathon.*
 
 class redirectPage {
     companion object{
@@ -27,6 +24,16 @@ class redirectPage {
 
         fun register2Activity(ctx : Context) : Intent{
             val intent = Intent(ctx, Register2Activity::class.java)
+            return intent
+        }
+
+        fun razerPayActivity(ctx : Context) : Intent{
+            val intent = Intent(ctx, RazerPayActivity::class.java)
+            return intent
+        }
+
+        fun mailbox(ctx : Context) : Intent{
+            val intent = Intent(ctx, MailboxActivity::class.java)
             return intent
         }
     }

@@ -1,26 +1,34 @@
 package com.example.razerhackathon.Models
 
-//data class Question(var title:String = "",
-//                    var category:String = "",
-//                    var description:String = "",
-//                    var hasImg: Boolean = false,
-//                    var image : String = "",
-//                    var userId : String = "",
-//                    var username : String = "",
-//                    var time_created : String = DateTimeFormatter
-//                        .ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
-//                        .withZone(ZoneId.of("Singapore"))
-//                        .format(Instant.now()),
-//                    var noOfComments : Int = 0){
-//    var firebaseID :String = ""
-//}
+import android.app.Activity
+import com.example.razerhackathon.db.userDAO
+import com.example.razerhackathon.global.constants
+import com.example.razerhackathon.global.sharedPref
 
-data class ClientInfo(
+
+class ClientInfo(
     var firstName: String = "",
     var lastName: String = "",
     var NRIC: String = "",
     var NRIC_Issued: String = "",
     var emailAddress: String = "",
     var password: String = "",
-    var confirmPassword: String = ""
-)
+    var confirmPassword: String = "",
+    var userId : String = ""
+){
+    fun saveSharedPreference(ctx : Activity){
+
+        // Saving it into shared preferences
+        val sharedPref = sharedPref(ctx)
+        sharedPref.putValue(constants.USERNAME, userId)
+        sharedPref.putValue(constants.LAST_NAME, lastName)
+        sharedPref.putValue(constants.FIRST_NAME, firstName)
+        sharedPref.putValue(constants.NRIC, NRIC)
+        sharedPref.putValue(constants.EMAIL, emailAddress)
+        sharedPref.commit()
+    }
+
+    fun createClient(){
+        userDAO.createUser(this)
+    }
+}
