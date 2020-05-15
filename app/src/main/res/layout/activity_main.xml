@@ -14,4 +14,10 @@
         android:layout_height="wrap_content"
         android:text="Button"
         android:onClick="addData"/>
+    <Button
+        android:id="@+id/buttonTestAPI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Test API"/>
+
 </LinearLayout>
