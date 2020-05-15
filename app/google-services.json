@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "657253370729",
+    "firebase_url": "https://razerhackathon.firebaseio.com",
+    "project_id": "razerhackathon",
+    "storage_bucket": "razerhackathon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657253370729:android:4d7441f86155f916dd8bf8",
+        "android_client_info": {
+          "package_name": "com.example.razerhackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657253370729-i6ugmmrfpk9hnss915on15crbnfuehph.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNL6ksXq88gdQTalgXONduumutsEymdBo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657253370729-i6ugmmrfpk9hnss915on15crbnfuehph.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
