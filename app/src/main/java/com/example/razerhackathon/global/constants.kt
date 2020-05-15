@@ -3,6 +3,7 @@ package com.example.razerhackathon.global
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
+
 class constants {
     companion object{
         val logTestDAO = "TestDAO_LOG"

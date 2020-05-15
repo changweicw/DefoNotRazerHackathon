@@ -1,8 +1,10 @@
 package com.example.razerhackathon.db
 
 import android.util.Log
+import com.example.razerhackathon.Models.ClientInfo
 import com.example.razerhackathon.global.constants
 import com.example.razerhackathon.global.constants.Companion.db
+import kotlinx.coroutines.tasks.await
 
 class userDAO {
 
@@ -29,5 +31,20 @@ class userDAO {
                     Log.w(constants.logTestDAO, "Error adding document", e)
                 }
         }
+
+        suspend fun getUser(userId : String) : ClientInfo
+        {
+            val docRef = db.collection("users").document(userId)
+            val data = docRef.get().await()
+            val userId:String = data["userId"].toString()
+            val email:String = data["email"].toString()
+            val firstName:String = data["firstName"].toString()
+            val lastName:String = data["lastName"].toString()
+            val nric:String = data["nric"].toString()
+
+            val clientInfo = ClientInfo(userId = userId, emailAddress = email, firstName = firstName, lastName = lastName, NRIC = nric)
+            return clientInfo
+        }
+
     }
 }

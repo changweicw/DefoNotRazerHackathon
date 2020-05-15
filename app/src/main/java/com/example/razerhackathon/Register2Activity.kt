@@ -74,15 +74,7 @@ class Register2Activity : AppCompatActivity() {
                     userDAO.createUser(user!!.uid, email, firstName, lastName, nric, nricExp)
                     toast.toastLong(this, "Registration Successful")
 
-                    // Saving it into shared preferences
-                    val sharedPref = sharedPref(this)
-                    sharedPref.putValue(constants.USERNAME, user!!.uid)
-                    sharedPref.putValue(constants.LAST_NAME, lastName)
-                    sharedPref.putValue(constants.FIRST_NAME, firstName)
-                    sharedPref.putValue(constants.NRIC_EXP, nricExp)
-                    sharedPref.putValue(constants.NRIC, nric)
-                    sharedPref.putValue(constants.EMAIL, email)
-                    sharedPref.commit()
+
 
                     // Redirecting to next page.
                     startActivity(redirectPage.mainActivity(this))

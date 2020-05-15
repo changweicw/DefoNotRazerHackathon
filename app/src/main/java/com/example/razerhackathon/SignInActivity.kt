@@ -1,5 +1,6 @@
 package com.example.razerhackathon
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +10,8 @@ import android.widget.EditText
 import com.example.razerhackathon.global.constants.Companion.logSignIn
 
 import android.widget.Toast
+import com.example.razerhackathon.Models.ClientInfo
+import com.example.razerhackathon.db.userDAO
 
 
 import com.example.razerhackathon.global.redirectPage
@@ -16,6 +19,8 @@ import com.example.razerhackathon.global.toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 
 
 class SignInActivity : AppCompatActivity() {
@@ -26,6 +31,8 @@ class SignInActivity : AppCompatActivity() {
     private lateinit var textboxPassword : EditText
     private lateinit var Email : String
     private lateinit var Password : String
+
+    private lateinit var clientInfo : ClientInfo
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,6 +66,14 @@ class SignInActivity : AppCompatActivity() {
                     Log.d(logSignIn, "signInWithEmail:success")
                     toast.toastLong(this, "Logged in successfully!")
                     val user = auth.currentUser
+
+                    val context = this
+                    MainScope().launch {
+                        clientInfo = userDAO.getUser(user!!.uid)
+                        clientInfo.saveSharedPreference(context)
+                        startActivity(redirectPage.mainActivity(context))
+                    }
+                    // Get the document from firebase
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(logSignIn, "signInWithEmail:failure", task.exception)
