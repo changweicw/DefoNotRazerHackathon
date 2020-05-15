@@ -1,5 +1,6 @@
 package com.example.razerhackathon
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.razerhackathon.constants.Companion.logSignIn
+import com.example.razerhackathon.global.redirectPage
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -38,13 +40,36 @@ class SignInActivity : AppCompatActivity() {
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
 
+        if (currentUser != null){
+            // Create an intent and redirect user to main activity
+            startActivity(redirectPage.mainActivity(this))
+            finish()
+        }
     }
 
     fun buttonSignInOnClick(view: View) {
-     getLoginCredentials()
+        getLoginCredentials()
+        auth.signInWithEmailAndPassword(Email, Password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(logSignIn, "signInWithEmail:success")
+                    Toast.makeText(baseContext, "Sign In successful!",
+                        Toast.LENGTH_SHORT).show()
+                    val user = auth.currentUser
+                    startActivity(redirectPage.mainActivity(this))
+                    finish()
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w(logSignIn, "signInWithEmail:failure", task.exception)
+                    Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
+                    // ...
+                }
+                // ...
+            }
     }
     fun buttonRegisterOnClick(view: View) {
-      getLoginCredentials()
+        getLoginCredentials()
         auth.createUserWithEmailAndPassword(Email, Password).addOnCompleteListener(this){
             task ->
             if (task.isSuccessful) {
@@ -66,5 +91,6 @@ class SignInActivity : AppCompatActivity() {
         Email = textboxUsername.text.toString()
         Password = textboxPassword.text.toString()
     }
+
 
 }

@@ -14,4 +14,11 @@
         android:layout_height="wrap_content"
         android:text="Button"
         android:onClick="addData"/>
+
+    <Button
+        android:id="@+id/buttonSignOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonSignOut"
+        android:text="SignOut" />
 </LinearLayout>

@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.example.razerhackathon.db.testDAO
+import com.example.razerhackathon.global.redirectPage
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,5 +17,11 @@ class MainActivity : AppCompatActivity() {
 
     fun addData(view: View) {
         testDAO.addUserDate("Felix", "Wang","1996")
+    }
+
+    fun buttonSignOut(view: View) {
+        Firebase.auth.signOut()
+        startActivity(redirectPage.signInActivity(this))
+        finish()
     }
 }
