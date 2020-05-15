@@ -5,9 +5,14 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+
+import com.example.razerhackathon.global.constants.Companion.logSignIn
+
 import android.widget.Toast
-import com.example.razerhackathon.CONSTANTS.Companion.logSignIn
+
+
 import com.example.razerhackathon.global.redirectPage
+import com.example.razerhackathon.global.toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -52,42 +57,24 @@ class SignInActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(logSignIn, "signInWithEmail:success")
-                    Toast.makeText(baseContext, "Sign In successful!",
-                        Toast.LENGTH_SHORT).show()
+                    toast.toastLong(this, "Logged in successfully!")
                     val user = auth.currentUser
-                    startActivity(redirectPage.mainActivity(this))
-                    finish()
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(logSignIn, "signInWithEmail:failure", task.exception)
-                    Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
-                    // ...
+                    toast.toastLong(this, "Logged in failed!")
                 }
-                // ...
             }
-    }
-    fun buttonRegisterOnClick(view: View) {
-        getLoginCredentials()
-        auth.createUserWithEmailAndPassword(Email, Password).addOnCompleteListener(this){
-            task ->
-            if (task.isSuccessful) {
-                // Sign in success, update UI with the signed-in user's information
-                Log.d(logSignIn, "createUserWithEmail:success")
-                val user = auth.currentUser
-                Toast.makeText(baseContext, "Authentication successful!",
-                    Toast.LENGTH_SHORT).show()
-            } else {
-                // If sign in fails, display a message to the user.
-                Log.w(logSignIn, "createUserWithEmail:failure", task.exception)
-                Toast.makeText(baseContext, "Authentication failed.",
-                    Toast.LENGTH_SHORT).show()
-            }
-        }
     }
 
     fun getLoginCredentials(){
         Email = textboxUsername.text.toString()
         Password = textboxPassword.text.toString()
+    }
+
+    // Redirect user to creating account
+    fun buttonCreateAccountOnClick(view: View) {
+        startActivity(redirectPage.registerActivity(this))
     }
 
 

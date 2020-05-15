@@ -7,9 +7,10 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.razerhackathon.CONSTANTS
 import com.example.razerhackathon.Models.ClientInfo
 import org.json.JSONObject
+import com.example.razerhackathon.global.constants.Companion.MAMBU_ACCESS
+
 
 object VolleyRequestHandler {
     fun getUserProfile(view: View, mambuId: String) {
@@ -31,7 +32,7 @@ object VolleyRequestHandler {
         {
             override fun getHeaders(): MutableMap<String, String> {
                 val headers = HashMap<String, String>()
-                headers["Authorization"] = "Basic ${CONSTANTS.MAMBU_ACCESS}"
+                headers["Authorization"] = "Basic ${MAMBU_ACCESS}"
                 headers["Content-Type"] = "application/json"
                 return headers
             }
