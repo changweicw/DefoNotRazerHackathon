@@ -12,6 +12,7 @@ import com.example.razerhackathon.global.constants.Companion.logSignIn
 import android.widget.Toast
 import com.example.razerhackathon.Models.ClientInfo
 import com.example.razerhackathon.db.userDAO
+import com.example.razerhackathon.global.constants
 
 
 import com.example.razerhackathon.global.redirectPage
@@ -39,10 +40,19 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
+
+
+
         // Setting up the views.
         textboxUsername = findViewById(R.id.textboxEmail)
         textboxPassword = findViewById(R.id.textBoxPassword)
         auth = Firebase.auth
+
+        /**
+         * CHEAT:
+         */
+        textboxUsername.setText(constants.SHORTCUT_EMAIL)
+        textboxPassword.setText(constants.SHORTCUT_PASSWORD)
     }
 
     override fun onStart() {

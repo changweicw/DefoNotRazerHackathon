@@ -34,7 +34,6 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     fun buttonNextOnClick(view: View) {
-
         val nric = editTextNric.text.toString()
         val nricExp = editTextNricExp.text.toString()
         val firstName = editTextFirstName.text.toString()

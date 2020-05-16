@@ -4,6 +4,7 @@ import android.util.Log
 import com.example.razerhackathon.Models.ClientInfo
 import com.example.razerhackathon.global.constants
 import com.example.razerhackathon.global.constants.Companion.db
+import com.google.firebase.firestore.SetOptions
 import kotlinx.coroutines.tasks.await
 
 class userDAO {
@@ -18,7 +19,8 @@ class userDAO {
                 "firstName" to clientInfo.firstName,
                 "lastName" to clientInfo.lastName,
                 "nric" to clientInfo.NRIC,
-                "nricExpiry" to clientInfo.NRIC_Issued
+                "nricExpiry" to clientInfo.NRIC_Issued,
+                "coins" to 0
             )
 
             // Add a new document with a generated ID
@@ -44,6 +46,22 @@ class userDAO {
 
             val clientInfo = ClientInfo(userId = userId, emailAddress = email, firstName = firstName, lastName = lastName, NRIC = nric)
             return clientInfo
+        }
+
+        suspend fun getCoins(userId : String) : Int
+        {
+            val docRef = db.collection("users").document(userId)
+            val data = docRef.get().await()
+            val coins : Long = data["coins"] as Long
+            return coins.toInt()
+        }
+
+        fun setCoins(userId : String, value : Int)
+        {
+            val data = hashMapOf("coins" to value)
+            db.collection("users").document(userId)
+                .set(data, SetOptions.merge())
+
         }
 
     }

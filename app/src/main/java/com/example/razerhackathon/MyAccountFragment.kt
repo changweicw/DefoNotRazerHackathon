@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.razerhackathon.Models.monstieLoadout
+import com.example.razerhackathon.db.expeditionDAO
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,7 +25,14 @@ class MyAccountFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        monstieLoadout.clearLoadout(activity!!)
+
         return inflater.inflate(R.layout.fragment_my_account, container, false)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        monstieLoadout.clearLoadout(activity!!)
     }
 
 }

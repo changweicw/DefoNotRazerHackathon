@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.razerhackathon.Models.ClientInfo
+import com.example.razerhackathon.db.expeditionDAO
 import com.example.razerhackathon.db.userDAO
 import com.example.razerhackathon.global.constants
 import com.example.razerhackathon.global.redirectPage
@@ -37,6 +38,11 @@ class Register2Activity : AppCompatActivity() {
         val buttonRegister = findViewById<Button>(R.id.buttonRegister)
         auth = Firebase.auth
 
+        /**
+         * CHEAT:
+         */
+        editTextEmail.setText(constants.SHORTCUT_EMAIL)
+
         buttonRegister.setOnClickListener {
             // Getting all the values from textbox
 
@@ -52,6 +58,7 @@ class Register2Activity : AppCompatActivity() {
             val nricExp = intent.getStringExtra(constants.NRIC_EXP)
             val firstName = intent.getStringExtra(constants.FIRST_NAME)
             val lastName = intent.getStringExtra(constants.LAST_NAME)
+
 
             Log.d(constants.logSignIn, email)
             Log.d(constants.logSignIn, password)
@@ -76,7 +83,7 @@ class Register2Activity : AppCompatActivity() {
                     var clientInfo = ClientInfo(userId = user!!.uid, emailAddress = email, firstName = firstName, lastName = lastName, NRIC = nric, NRIC_Issued = nricExp)
                     clientInfo.createClient()
                     clientInfo.saveSharedPreference(this)
-
+                    expeditionDAO.createEmptyExpedition(user!!.uid)
                     // Redirecting to next page.
                     startActivity(redirectPage.razerPayActivity(this))
 
