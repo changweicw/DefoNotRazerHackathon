@@ -14,7 +14,9 @@ class ClientInfo(
     var emailAddress: String = "",
     var password: String = "",
     var confirmPassword: String = "",
-    var userId : String = ""
+    var userId : String = "",
+    var mambuId : String = "",
+    var savingsAccountId : String = ""
 ){
     fun saveSharedPreference(ctx : Activity){
 

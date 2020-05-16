@@ -46,5 +46,17 @@ class userDAO {
             return clientInfo
         }
 
+        fun updateMambuId(userId: String, mambuId: String) {
+            db.collection("users")
+                .document(userId)
+                .update("mambuId", mambuId)
+        }
+
+        fun updateAccountId(userId: String, accountId: String) {
+            db.collection("users")
+                .document(userId)
+                .update("savingsAccountId", accountId)
+        }
+
     }
 }
