@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.viewpager.widget.ViewPager
+import com.example.razerhackathon.Models.monstieLoadout
 import com.example.razerhackathon.global.constants
 import com.example.razerhackathon.global.redirectPage
 import com.example.razerhackathon.global.toast
@@ -18,7 +19,6 @@ class RazerPayActivity : AppCompatActivity() {
 
         // Hiding the Activity Bar
         getSupportActionBar()!!.hide();
-
         // Displaying the tabs and view pager.
         val viewPager : ViewPager = findViewById(R.id.viewPager)
         val tabs : TabLayout = findViewById(R.id.tabs)

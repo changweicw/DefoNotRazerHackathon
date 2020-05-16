@@ -36,6 +36,21 @@ class redirectPage {
             val intent = Intent(ctx, MailboxActivity::class.java)
             return intent
         }
+
+        fun customizeExpedition(ctx : Context) : Intent{
+            val intent = Intent(ctx, CustomizeExpeditionActivity::class.java)
+            return intent
+        }
+
+        fun selectMonstie(ctx : Context) : Intent{
+            val intent = Intent(ctx, SelectMonstieActivity::class.java)
+            return intent
+        }
+
+        fun expeditionCollection(ctx : Context) : Intent{
+            val intent = Intent(ctx, ExpeditionCollectionActivity::class.java)
+            return intent
+        }
     }
 
 }

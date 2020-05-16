@@ -10,7 +10,13 @@ import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.razerhackathon.Models.ClientInfo
 import com.example.razerhackathon.db.userDAO
+
+import com.example.razerhackathon.global.constants
+
+
+
 import com.example.razerhackathon.global.constants.Companion.logSignIn
+
 import com.example.razerhackathon.global.redirectPage
 import com.example.razerhackathon.global.toast
 import com.google.firebase.auth.FirebaseAuth
@@ -37,16 +43,27 @@ class SignInActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         supportActionBar?.hide()
 
+
+
+
         // Setting up the views.
         textboxUsername = findViewById(R.id.textboxEmail)
         textboxPassword = findViewById(R.id.textBoxPassword)
         auth = Firebase.auth
+
+
+        /**
+         * CHEAT:
+         */
+        textboxUsername.setText(constants.SHORTCUT_EMAIL)
+        textboxPassword.setText(constants.SHORTCUT_PASSWORD)
 
         val redirectLanding = findViewById<ImageButton>(R.id.backToLanding)
         redirectLanding.setOnClickListener {
             val tempIntent = Intent(it.context, LandingActivity::class.java)
             startActivity(tempIntent)
         }
+
     }
 
     override fun onStart() {

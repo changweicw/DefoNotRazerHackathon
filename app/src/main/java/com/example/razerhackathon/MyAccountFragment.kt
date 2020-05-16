@@ -6,6 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+
+import com.example.razerhackathon.Models.monstieLoadout
+import com.example.razerhackathon.db.expeditionDAO
+
 import android.widget.Button
 import android.widget.ImageButton
 import com.example.razerhackathon.global.redirectPage
@@ -28,6 +32,10 @@ class MyAccountFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
+        monstieLoadout.clearLoadout(activity!!)
+
+
         val currView = inflater.inflate(R.layout.fragment_my_account, container, false)
 
         val myTopUpBtn = currView.findViewById<ImageButton>(R.id.topUpLaunchBtn)
@@ -38,6 +46,12 @@ class MyAccountFragment : Fragment() {
         }
 
         return currView
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        monstieLoadout.clearLoadout(activity!!)
     }
 
 }

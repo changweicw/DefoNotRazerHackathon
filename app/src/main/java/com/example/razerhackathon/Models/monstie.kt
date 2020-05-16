@@ -5,10 +5,13 @@ import com.example.razerhackathon.global.constants
 import kotlin.random.Random
 
 class monstie(
+    var monstieId : String = "",
     var name : String = "",
     var description : String = "",
     var rarity : Int = 0,
-    var imageUrl : String = "") {
+    var imageUrl : String = "",
+    var multiplier : Double = 0.0,
+    var availability : String = "Y") {
 
     companion object{
 

@@ -12,7 +12,11 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.razerhackathon.Models.ClientInfo
+
+import com.example.razerhackathon.db.expeditionDAO
+
 import com.example.razerhackathon.OkHttp.OkHttpRequestHandler
+
 import com.example.razerhackathon.db.userDAO
 import com.example.razerhackathon.global.constants
 import com.example.razerhackathon.global.redirectPage
@@ -46,6 +50,11 @@ class Register2Activity : AppCompatActivity() {
         val returnToRegisterOne = findViewById<ImageButton>(R.id.backToRegisterOne)
         auth = Firebase.auth
 
+        /**
+         * CHEAT:
+         */
+        editTextEmail.setText(constants.SHORTCUT_EMAIL)
+
         buttonRegister.setOnClickListener {
             // Getting all the values from textbox
 
@@ -61,6 +70,7 @@ class Register2Activity : AppCompatActivity() {
             val nricExp = intent.getStringExtra(constants.NRIC_EXP)
             val firstName = intent.getStringExtra(constants.FIRST_NAME)
             val lastName = intent.getStringExtra(constants.LAST_NAME)
+
 
             Log.d(constants.logSignIn, email)
             Log.d(constants.logSignIn, password)
@@ -91,10 +101,14 @@ class Register2Activity : AppCompatActivity() {
                     var clientInfo = ClientInfo(userId = user!!.uid, emailAddress = email, firstName = firstName, lastName = lastName, NRIC = nric, NRIC_Issued = nricExp)
                     clientInfo.createClient()
                     clientInfo.saveSharedPreference(this)
+
+                    expeditionDAO.createEmptyExpedition(user!!.uid)
+
                     sharedPref =  getSharedPreferences(constants.PREF_NAME, Context.MODE_PRIVATE)
                     // Todo: Chang Wei put your Codes here!
                     //Opening New Mambu Client Info & Automatically Create Savings Account
                     OkHttpRequestHandler.createNewClient(sharedPref.getString(constants.USERNAME, "")!!, newClient)
+
 
                     // Redirecting to next page.
                     startActivity(redirectPage.razerPayActivity(this))
