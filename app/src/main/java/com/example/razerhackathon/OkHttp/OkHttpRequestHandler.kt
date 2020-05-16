@@ -105,7 +105,7 @@ object OkHttpRequestHandler {
     fun depositBalance(view: View, depositInfo: DepositInfo){
         val url = "https://razerhackathon.sandbox.mambu.com/api/savings/${depositInfo.accountId}/transactions/"
 
-        val payload = "{\"amount\":200,\"notes\":\"Deposit into savings account\",\"type\":\"DEPOSIT\",\"method\":\"bank\",\"customInformation\":[{\"value\":\"unique identifier for receipt\",\"customFieldID\":\"IDENTIFIER_TRANSACTION_CHANNEL_I\"}]}"
+        val payload = "{\"amount\":${depositInfo.amount},\"notes\":\"Deposit into savings account\",\"type\":\"DEPOSIT\",\"method\":\"bank\",\"customInformation\":[{\"value\":\"unique identifier for receipt\",\"customFieldID\":\"IDENTIFIER_TRANSACTION_CHANNEL_I\"}]}"
         var myClient = OkHttpClient()
         val requestBody = payload.toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
         Log.d("Payload Check", requestBody.toString())

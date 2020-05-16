@@ -1,6 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:clipChildren="false">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#1F212E"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dp">
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/chevronleft"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top Up"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="55dp"
+            android:text="Balance"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp"/>
+
+
+        <TextView
+            android:id="@+id/textViewCurrBal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:text="00.00"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:textColor="#FFFFFF"
+            android:textSize="40dp"/>
+
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Top Up Method"
+        android:textSize="13dp"
+        android:textColor="#000"
+        android:background="#E0E0E0"
+        android:padding="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F2F2F2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="eNets"
+            android:padding="15dp"
+            android:textSize="13dp"
+            android:textColor="#000"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="?android:selectableItemBackground"
+            android:src="@drawable/chevronright"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Top Up Amount"
+        android:textColor="#000"
+        android:padding="15dp"
+        android:textSize="15dp"
+        android:background="#E0E0E0"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/radio_group_topup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_above="@+id/view_below" >
+
+                <RadioButton
+                    android:id="@+id/radioTwenty"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:background="@drawable/radio_selector"
+                    android:textColor="@drawable/radio_text_color"
+                    android:button="@android:color/transparent"
+                    android:checked="false"
+                    android:text="20"
+                    android:textAlignment="center"/>
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="5dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioFifty"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:background="@drawable/radio_selector"
+                    android:textColor="@drawable/radio_text_color"
+                    android:button="@android:color/transparent"
+                    android:checked="false"
+                    android:text="50"
+                    android:textAlignment="center"/>
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="5dp"/>
+
+
+                <RadioButton
+                    android:id="@+id/radioHundred"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:background="@drawable/radio_selector"
+                    android:textColor="@drawable/radio_text_color"
+                    android:button="@android:color/transparent"
+                    android:checked="false"
+                    android:text="100"
+                    android:textAlignment="center"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:textSize="15dp"
+            android:hint="Enter at least SGD 10"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/topUpBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:text="Top Up"
+        android:padding="10dp"
+        android:layout_margin="20dp"
+        android:textSize="15dp"
+        android:textColor="#FFFFFF"
+        android:background="#4CD33B"
+        android:layout_gravity="bottom"/>
 
 </LinearLayout>

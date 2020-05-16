@@ -1,10 +1,12 @@
 package com.example.razerhackathon
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.razerhackathon.Models.ClientInfo
 import com.example.razerhackathon.OkHttp.OkHttpRequestHandler
@@ -27,12 +29,13 @@ class Register2Activity : AppCompatActivity() {
     private lateinit var editTextPassword : EditText
     private lateinit var editTextCfmPassword : EditText
 
-    val sharedPref = getSharedPreferences("dontask", 0)
+    private val sharedPref: SharedPreferences = getSharedPreferences(constants.PREF_NAME, 0)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register2)
 
+        Toast.makeText(this, "Register Part 2", Toast.LENGTH_SHORT).show()
         editTextEmail = findViewById(R.id.editTextEmail)
         editTextPassword = findViewById(R.id.editTextPassword)
         editTextCfmPassword = findViewById(R.id.editTextCfmPassword)
