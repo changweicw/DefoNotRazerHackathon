@@ -30,6 +30,12 @@ class TopUpActivity : AppCompatActivity() {
         toast.toastShort(this, username!!)
         toast.toastShort(this, email!!)
 
+        val userBal = shared.getString(constants.BALANCE, "")
+        if (userBal != "") {
+            val userBalanceMain = findViewById<TextView>(R.id.textViewCurrBal)
+            userBalanceMain.text = userBal
+        }
+
         val myRadioGrp = findViewById<RadioGroup>(R.id.radio_group_topup)
         val radioBtnOne = findViewById<RadioButton>(R.id.radioTwenty)
         val radioBtnTwo = findViewById<RadioButton>(R.id.radioFifty)

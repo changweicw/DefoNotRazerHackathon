@@ -37,6 +37,9 @@ class constants {
 
         val MAMBU_ACCESS = "VGVhbTg2OnBhc3NDQzdERjNBM0I="
         val ASSIGNED_BRANCH_KEY = "8a8e878e71c7a4d70171ca696b9112ef"
+        val BALANCE = "balance"
+        val BALANCETRACKER = "balanceTracker"
+        val REDEEMCOUNTER = "redeemcounter"
 
         val MAMBUID = "mambuId"
         val SAVINGSACCOUNTID = "savingsAccountId"

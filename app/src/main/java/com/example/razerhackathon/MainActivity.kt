@@ -2,6 +2,7 @@ package com.example.razerhackathon
 
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -76,7 +77,8 @@ class MainActivity : AppCompatActivity() {
 
     fun buttonSignOut(view: View) {
         Firebase.auth.signOut()
-        startActivity(redirectPage.signInActivity(this))
+        val tempIntent = Intent(view.context, LandingActivity::class.java)
+        startActivity(tempIntent)
         finish()
     }
 
