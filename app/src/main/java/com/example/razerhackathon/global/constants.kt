@@ -15,6 +15,7 @@ class constants {
         val db = Firebase.firestore
 
         // User Variables
+        val documentId = "documentId"
         val NRIC = "nric"
         val NRIC_EXP = "nricExp"
         val FIRST_NAME = "firstName"
@@ -35,7 +36,10 @@ class constants {
 
 
         val MAMBU_ACCESS = "VGVhbTg2OnBhc3NDQzdERjNBM0I="
+        val ASSIGNED_BRANCH_KEY = "8a8e878e71c7a4d70171ca696b9112ef"
 
+        val MAMBUID = "mambuId"
+        val SAVINGSACCOUNTID = "savingsAccountId"
 
         // Monstie Rarity
         val COMMON = 1

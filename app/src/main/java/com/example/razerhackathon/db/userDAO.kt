@@ -48,6 +48,7 @@ class userDAO {
             return clientInfo
         }
 
+
         suspend fun getCoins(userId : String) : Int
         {
             val docRef = db.collection("users").document(userId)
@@ -56,11 +57,22 @@ class userDAO {
             return coins.toInt()
         }
 
-        fun setCoins(userId : String, value : Int)
-        {
+        fun setCoins(userId : String, value : Int) {
             val data = hashMapOf("coins" to value)
             db.collection("users").document(userId)
                 .set(data, SetOptions.merge())
+        }
+
+        fun updateMambuId(userId: String, mambuId: String) {
+            db.collection("users")
+                .document(userId)
+                .update("mambuId", mambuId)
+        }
+
+        fun updateAccountId(userId: String, accountId: String) {
+            db.collection("users")
+                .document(userId)
+                .update("savingsAccountId", accountId)
 
         }
 

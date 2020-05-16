@@ -1,19 +1,21 @@
 package com.example.razerhackathon
 
-import android.app.Activity
-import androidx.appcompat.app.AppCompatActivity
+
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
-
-import com.example.razerhackathon.global.constants.Companion.logSignIn
-
-import android.widget.Toast
+import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 import com.example.razerhackathon.Models.ClientInfo
 import com.example.razerhackathon.db.userDAO
+
 import com.example.razerhackathon.global.constants
 
+
+
+import com.example.razerhackathon.global.constants.Companion.logSignIn
 
 import com.example.razerhackathon.global.redirectPage
 import com.example.razerhackathon.global.toast
@@ -38,7 +40,8 @@ class SignInActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_in)
+        setContentView(R.layout.activity_login)
+        supportActionBar?.hide()
 
 
 
@@ -48,11 +51,19 @@ class SignInActivity : AppCompatActivity() {
         textboxPassword = findViewById(R.id.textBoxPassword)
         auth = Firebase.auth
 
+
         /**
          * CHEAT:
          */
         textboxUsername.setText(constants.SHORTCUT_EMAIL)
         textboxPassword.setText(constants.SHORTCUT_PASSWORD)
+
+        val redirectLanding = findViewById<ImageButton>(R.id.backToLanding)
+        redirectLanding.setOnClickListener {
+            val tempIntent = Intent(it.context, LandingActivity::class.java)
+            startActivity(tempIntent)
+        }
+
     }
 
     override fun onStart() {

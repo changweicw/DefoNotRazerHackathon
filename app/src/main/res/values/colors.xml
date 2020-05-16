@@ -8,6 +8,8 @@
     <color name="grey_300">#E0E0E0</color>
     <color name="grey_500">#9E9E9E</color>
 
+    <color name="radio_unselected">#000000</color>
+
     <color name="razer_green">#4CD33B</color>
     <color name="background">#2F3144</color>
 </resources>

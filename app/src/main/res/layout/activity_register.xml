@@ -6,12 +6,55 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterActivity"
+    android:background="@drawable/signup_background_gradient">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp">
+
+        <ImageButton
+            android:id="@+id/backToLogin"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="?android:selectableItemBackground"
+            android:src="@drawable/chevronleft"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="Create your Savings Account"
+        android:textColor="#F2F2F2"
+        android:textSize="25dp"
+        android:elegantTextHeight="true"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_marginTop="25dp"
         android:id="@+id/textViewFirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#BDBDBD"
         android:text="First Name" />
 
     <EditText
@@ -20,13 +63,16 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="#F2F2F2"
         android:hint="First Name"
         android:text="Felix"/>
 
     <TextView
+        android:layout_marginTop="10dp"
         android:id="@+id/textViewLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#BDBDBD"
         android:text="Last Name" />
 
     <EditText
@@ -34,14 +80,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:textColor="#F2F2F2"
         android:inputType="textPersonName"
         android:text="Wang"
         android:hint="Last Name" />
 
     <TextView
+        android:layout_marginTop="10dp"
         android:id="@+id/textViewNric"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#BDBDBD"
         android:text="NRIC" />
 
     <EditText
@@ -49,14 +98,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:textColor="#F2F2F2"
         android:inputType="textPersonName"
         android:text="S9653122A"
         android:hint="Nric" />
 
     <TextView
+        android:layout_marginTop="10dp"
         android:id="@+id/textViewNricExp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#BDBDBD"
         android:text="NricExp" />
 
     <EditText
@@ -64,13 +116,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:textColor="#F2F2F2"
         android:inputType="date" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
 
     <Button
         android:id="@+id/buttonNextPage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="buttonNextOnClick"
+        android:background="@color/razer_green"
+        android:textColor="#F2F2F2"
+        android:layout_marginBottom="12dp"
         android:text="Next" />
 
 

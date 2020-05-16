@@ -1,12 +1,19 @@
 package com.example.razerhackathon
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+
 import com.example.razerhackathon.Models.monstieLoadout
 import com.example.razerhackathon.db.expeditionDAO
+
+import android.widget.Button
+import android.widget.ImageButton
+import com.example.razerhackathon.global.redirectPage
+import kotlinx.android.synthetic.main.fragment_my_account.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,9 +32,21 @@ class MyAccountFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
         monstieLoadout.clearLoadout(activity!!)
 
-        return inflater.inflate(R.layout.fragment_my_account, container, false)
+
+        val currView = inflater.inflate(R.layout.fragment_my_account, container, false)
+
+        val myTopUpBtn = currView.findViewById<ImageButton>(R.id.topUpLaunchBtn)
+
+        myTopUpBtn?.setOnClickListener {
+            val tempIntent = Intent(it.context, TopUpActivity::class.java)
+            startActivity(tempIntent)
+        }
+
+        return currView
+
     }
 
     override fun onResume() {
