@@ -36,6 +36,7 @@ class TopUpActivity : AppCompatActivity() {
         val radioBtnThree = findViewById<RadioButton>(R.id.radioHundred)
         val inputAmount = findViewById<TextView>(R.id.editTextAmount)
         val confirmAmountBtn = findViewById<Button>(R.id.topUpBtn)
+        val redirectRazerPay = findViewById<ImageButton>(R.id.backToRazerPay)
 
         myRadioGrp.setOnCheckedChangeListener { _, checkedId ->
             val radio: RadioButton = findViewById(checkedId)
@@ -52,6 +53,11 @@ class TopUpActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please enter a top up amount", Toast.LENGTH_SHORT).show()
             }
 
+        }
+
+        redirectRazerPay.setOnClickListener {
+            val tempIntent = Intent(it.context, RazerPayActivity::class.java)
+            startActivity(tempIntent)
         }
 
     }

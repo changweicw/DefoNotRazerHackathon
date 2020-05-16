@@ -1,41 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:padding="15dp"
     android:layout_height="match_parent"
-    android:background="@color/grey_100"
+    android:background="@drawable/bg"
     android:orientation="vertical">
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sign In" />
-
-    <EditText
-        android:id="@+id/textboxEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Email Address" />
-
-    <EditText
-        android:id="@+id/textBoxPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword" />
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
 
     <Button
         android:id="@+id/buttonSignIn"
         android:onClick="buttonSignInOnClick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/razer_green"
+        android:textColor="#F2F2F2"
+        android:layout_marginBottom="15dp"
         android:text="Sign In" />
 
     <Button
@@ -43,6 +27,8 @@
         android:onClick="buttonCreateAccountOnClick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/signup_button"
+        android:textColor="@color/razer_green"
         android:text="Create Account" />
 
 </LinearLayout>

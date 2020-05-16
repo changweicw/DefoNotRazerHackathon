@@ -1,12 +1,14 @@
 package com.example.razerhackathon
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.razerhackathon.Models.ClientInfo
@@ -19,6 +21,7 @@ import com.example.razerhackathon.global.toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_register2.*
 
 class Register2Activity : AppCompatActivity() {
 
@@ -35,11 +38,12 @@ class Register2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register2)
-
+        supportActionBar?.hide()
         editTextEmail = findViewById(R.id.editTextEmail)
         editTextPassword = findViewById(R.id.editTextPassword)
         editTextCfmPassword = findViewById(R.id.editTextCfmPassword)
         val buttonRegister = findViewById<Button>(R.id.buttonRegister)
+        val returnToRegisterOne = findViewById<ImageButton>(R.id.backToRegisterOne)
         auth = Firebase.auth
 
         buttonRegister.setOnClickListener {
@@ -102,6 +106,12 @@ class Register2Activity : AppCompatActivity() {
                 }
             }
         }
+
+        backToRegisterOne.setOnClickListener {
+            val tempIntent = Intent(it.context, RegisterActivity::class.java)
+            startActivity(tempIntent)
+        }
+
     }
 
     fun validatePassword(password : String, cfmPassword : String) : Boolean{
