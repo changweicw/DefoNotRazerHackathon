@@ -1,5 +1,6 @@
 package com.example.razerhackathon
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
@@ -29,13 +30,12 @@ class Register2Activity : AppCompatActivity() {
     private lateinit var editTextPassword : EditText
     private lateinit var editTextCfmPassword : EditText
 
-    private val sharedPref: SharedPreferences = getSharedPreferences(constants.PREF_NAME, 0)
+    private lateinit var sharedPref: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register2)
 
-        Toast.makeText(this, "Register Part 2", Toast.LENGTH_SHORT).show()
         editTextEmail = findViewById(R.id.editTextEmail)
         editTextPassword = findViewById(R.id.editTextPassword)
         editTextCfmPassword = findViewById(R.id.editTextCfmPassword)
@@ -67,11 +67,11 @@ class Register2Activity : AppCompatActivity() {
             Log.d(constants.logSignIn, nricExp)
 
             //Creating new object for mambu
-             val newClient: ClientInfo = ClientInfo(
-                firstName,
-                lastName,
-                nric,
-                nricExp
+             val newClient = ClientInfo(
+                 firstName,
+                 lastName,
+                 nric,
+                 nricExp
             )
 
             // Adding the data into FireBase
@@ -87,7 +87,7 @@ class Register2Activity : AppCompatActivity() {
                     var clientInfo = ClientInfo(userId = user!!.uid, emailAddress = email, firstName = firstName, lastName = lastName, NRIC = nric, NRIC_Issued = nricExp)
                     clientInfo.createClient()
                     clientInfo.saveSharedPreference(this)
-
+                    sharedPref =  getSharedPreferences(constants.PREF_NAME, Context.MODE_PRIVATE)
                     // Todo: Chang Wei put your Codes here!
                     //Opening New Mambu Client Info & Automatically Create Savings Account
                     OkHttpRequestHandler.createNewClient(sharedPref.getString(constants.USERNAME, "")!!, newClient)

@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.ActivityManager
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.example.razerhackathon.Models.ClientInfo
 import com.example.razerhackathon.Models.DepositInfo
 import com.example.razerhackathon.Models.NewAccount
@@ -20,6 +21,7 @@ import java.io.IOException
 object OkHttpRequestHandler {
 
     fun createNewClient(userId: String, newClient: ClientInfo){
+        Log.d("New User ID", userId)
         val url = "https://razerhackathon.sandbox.mambu.com/api/clients/"
         val payload = "{" +
                 "\"client\":{\"firstName\":\"${newClient.firstName}\",\"lastName\":\"${newClient.lastName}\",\"preferredLanguage\":\"ENGLISH\",\"notes\":\"TEMPORARY PLACEHOLDER\",\"assignedBranchKey\":\"${constants.ASSIGNED_BRANCH_KEY}\"}," +
@@ -44,6 +46,7 @@ object OkHttpRequestHandler {
             override fun onResponse(call: Call, response: Response) {
                 // Handle this
                 val responseBody = JSONObject(response.body!!.string())
+                Log.d("Mambu Response", response.toString())
                 val generatedInfo = responseBody.getJSONObject("client")
                 val generatedMambuId = generatedInfo["encodedKey"]
                 Log.d("Generated Mambu ID", generatedMambuId.toString())
