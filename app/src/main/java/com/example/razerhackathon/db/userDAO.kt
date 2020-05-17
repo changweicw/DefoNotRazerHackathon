@@ -20,7 +20,7 @@ class userDAO {
                 "lastName" to clientInfo.lastName,
                 "nric" to clientInfo.NRIC,
                 "nricExpiry" to clientInfo.NRIC_Issued,
-                "coins" to 0
+                "coins" to 50000
             )
 
             // Add a new document with a generated ID

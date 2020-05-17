@@ -18,6 +18,7 @@ import com.example.razerhackathon.db.expeditionDAO
 import com.example.razerhackathon.db.monstieDAO
 import com.example.razerhackathon.global.constants
 import com.example.razerhackathon.global.sharedPref
+import com.example.razerhackathon.global.toast
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
@@ -55,6 +56,19 @@ class MonstersFragment : Fragment() {
         refreshPage()
 
 
+        val context = activity!!
+        MainScope().launch {
+            val numMonsters = monstieDAO.getNumMonstie(username)
+            if (numMonsters == 0){
+                toast.toastShort(context, "We have given you some free monsties to try out!")
+                for (i in 0 until 4){
+                    monstie.getMonstieListByRarity(username)
+
+                }
+            }
+            refreshPage()
+        }
+
 
         val currentAccBalance = shared.getString(constants.BALANCE, "")
         if (currentAccBalance != ""){
@@ -83,7 +97,6 @@ class MonstersFragment : Fragment() {
             sharedPref.commit()
             Log.d("Check Redeem Value: ", shared.getInt(constants.REDEEMCOUNTER, 0).toString())
         }
-
 
         return view
     }

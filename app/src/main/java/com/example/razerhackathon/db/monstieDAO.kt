@@ -84,6 +84,12 @@ class monstieDAO{
         }
 
 
+        suspend fun getNumMonstie(username : String) : Int{
+            val monstieList = mutableListOf<monstie>()
+            val querySnapshot = db.collection("users").document(username).collection("monsties").get().await()
+            return querySnapshot.size()
+        }
+
         // Get all Monsties By UserId
         suspend fun getMonstieByUserId(userId : String) : ArrayList<monstie>{
             val monstieList = arrayListOf<monstie>()

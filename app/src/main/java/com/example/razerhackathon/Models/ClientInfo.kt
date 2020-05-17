@@ -30,9 +30,6 @@ class ClientInfo(
         sharedPref.commit()
     }
 
-
-
-
     fun createClient(){
         userDAO.createUser(this)
     }
