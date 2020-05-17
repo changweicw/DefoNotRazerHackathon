@@ -12,7 +12,6 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.razerhackathon.Models.ClientInfo
-import com.example.razerhackathon.Models.monstie.Companion.getMonstieListByRarity
 
 import com.example.razerhackathon.db.expeditionDAO
 
@@ -27,8 +26,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_register2.*
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.launch
 
 class Register2Activity : AppCompatActivity() {
 
@@ -103,9 +100,6 @@ class Register2Activity : AppCompatActivity() {
                     clientInfo.saveSharedPreference(this)
 
                     expeditionDAO.createEmptyExpedition(user!!.uid)
-
-                    // Give four free monsties
-
 
                     sharedPref =  getSharedPreferences(constants.PREF_NAME, Context.MODE_PRIVATE)
                     // Todo: Chang Wei put your Codes here!

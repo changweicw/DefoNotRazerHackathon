@@ -110,7 +110,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#BDBDBD"
-        android:text="NricExp" />
+        android:text="Nric Issue Date" />
 
     <EditText
         android:id="@+id/editTextNricExp"

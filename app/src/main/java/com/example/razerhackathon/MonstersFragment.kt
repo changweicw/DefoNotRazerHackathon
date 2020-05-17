@@ -63,7 +63,6 @@ class MonstersFragment : Fragment() {
                 toast.toastShort(context, "We have given you some free monsties to try out!")
                 for (i in 0 until 4){
                     monstie.getMonstieListByRarity(username)
-
                 }
             }
             refreshPage()
