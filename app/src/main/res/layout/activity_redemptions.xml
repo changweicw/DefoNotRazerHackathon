@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="15dp"
-    android:paddingRight="15dp"
     android:orientation="vertical"
+    android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".SelectMonstieActivity">
 
+    tools:context=".Redemptions">
+
+    <!-- Fake Activity Bar -->
+    <!-- Fake Activity Bar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,17 +41,24 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="-17dp"
                 android:gravity="center"
-                android:text="My Monsters"
-                android:textColor="#fff"
+                android:text="Redemptions"
+                android:textColor="#fafafa"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewMyMonstie"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_weight="1" />
+        android:text="Please make an redemption"
+        android:textStyle="bold"
+        android:paddingLeft="17sp"
+        android:layout_marginTop="20dp"
+        android:textColor="#fff"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="30dp"
+        android:id="@+id/recyclerViewRedemption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

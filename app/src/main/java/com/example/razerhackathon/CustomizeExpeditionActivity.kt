@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.razerhackathon.Models.expedition
 import com.example.razerhackathon.Models.monstie
@@ -36,21 +37,37 @@ class CustomizeExpeditionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customize_expedition)
         Log.d("ON CREATE!", "CREATED!")
-
+        // Hiding the Activity Bar
+        getSupportActionBar()!!.hide();
         // Getting the shared preference
         val shared = getSharedPreferences(constants.PREF_NAME, Context.MODE_PRIVATE)
         username = shared.getString(constants.USERNAME, "")!!
 
         // Getting the expedition ID from the intent that is passed over
         expeditionId = intent.getStringExtra("expeditionId")!!
-        toast.toastShort(this, "expedition Id $expeditionId")
+//        toast.toastShort(this, "expedition Id $expeditionId")
 
+        val backBtn : ImageView = findViewById(R.id.backCaret)
+        backBtn.setOnClickListener{
+            finish()
+        }
 
         populateImages()
+
+        val ctx = this
+        val imageViewCE : ImageView = findViewById(R.id.imageViewCE)
+        val textViewCEDescription : TextView = findViewById(R.id.textViewCEDescription)
+        val textViewCEName : TextView = findViewById(R.id.textViewCEName)
 
         // Getting the expedition details.
         MainScope().launch {
             currExpedition = expeditionDAO.getExpedition(expeditionId)
+
+            val resourceId = resources.getIdentifier(currExpedition.imageUrl, "drawable", ctx.packageName)
+            imageViewCE.setImageResource(resourceId)
+
+            textViewCEName.setText(currExpedition.name)
+            textViewCEDescription.setText(currExpedition.description)
         }
     }
 

@@ -31,7 +31,8 @@ class ExpeditionCollectionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_expedition_collection)
 
-
+        // Hiding the Activity Bar
+        getSupportActionBar()!!.hide();
         // Get Expedition Id
         // Getting the shared preference
         val shared = getSharedPreferences(constants.PREF_NAME, Context.MODE_PRIVATE)
@@ -39,8 +40,13 @@ class ExpeditionCollectionActivity : AppCompatActivity() {
 
         // Getting the expedition ID from the intent that is passed over
         expeditionId = intent.getStringExtra("expeditionId")!!
-        toast.toastShort(this, "expedition Id $expeditionId")
+//        toast.toastShort(this, "expedition Id $expeditionId")
 
+        val backBtn : ImageView = findViewById(R.id.backCaret)
+        backBtn.setOnClickListener{
+            finish()
+        }
+        
         MainScope().launch {
             expeditionObj = expeditionDAO.getUserExpedition (expeditionId, username)
             monstieArray = expeditionDAO.getLoadout(expeditionId, username)

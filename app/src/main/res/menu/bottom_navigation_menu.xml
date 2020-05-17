@@ -3,23 +3,23 @@
     <item
         android:id="@+id/menuRazorPay"
         android:enabled="true"
-        android:icon="@drawable/common_google_signin_btn_icon_dark"
+        android:icon="@drawable/home"
         android:title="Razer Pay"/>
     <item
         android:id="@+id/menuMarketPlace"
         android:enabled="true"
-        android:icon="@drawable/common_google_signin_btn_icon_dark"
+        android:icon="@drawable/marketplace"
         android:title="Marketplace"/>
 
     <item
         android:id="@+id/menuFriends"
         android:enabled="true"
-        android:icon="@drawable/common_google_signin_btn_icon_dark"
+        android:icon="@drawable/friends"
         android:title="Friends"/>
 
     <item
         android:id="@+id/menuMe"
         android:enabled="true"
-        android:icon="@drawable/common_google_signin_btn_icon_dark"
+        android:icon="@drawable/profile"
         android:title="Me"/>
 </menu>

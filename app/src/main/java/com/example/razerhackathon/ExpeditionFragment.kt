@@ -53,7 +53,7 @@ class ExpeditionFragment : Fragment() {
 
             val expeditionArrayList = expeditionDAO.getAllExpeditions()
             val ongoingExpeditionArrayList = expeditionDAO.getAllOngoingExpeditions(username)
-            toast.toastShort(activity!!, ongoingExpeditionArrayList.size.toString())
+         
 
             // Check if user can go for expedition anot.
             val isExpeditionAvailable = expeditionDAO.isExpeditionAvailable(username)
@@ -84,7 +84,7 @@ class ExpeditionFragment : Fragment() {
 
             val expeditionArrayList = expeditionDAO.getAllExpeditions()
             val ongoingExpeditionArrayList = expeditionDAO.getAllOngoingExpeditions(username)
-            toast.toastShort(activity!!, ongoingExpeditionArrayList.size.toString())
+//            toast.toastShort(activity!!, ongoingExpeditionArrayList.size.toString())
 
             // Check if user can go for expedition anot.
             val isExpeditionAvailable = expeditionDAO.isExpeditionAvailable(username)

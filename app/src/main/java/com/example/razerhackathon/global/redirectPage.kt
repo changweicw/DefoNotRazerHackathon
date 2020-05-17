@@ -7,11 +7,6 @@ import com.example.razerhackathon.*
 
 class redirectPage {
     companion object{
-        fun mainActivity(ctx : Context) : Intent{
-            val intent = Intent(ctx, MainActivity::class.java)
-            return intent
-        }
-
         fun signInActivity(ctx : Context) : Intent{
             val intent = Intent(ctx, SignInActivity::class.java)
             return intent
@@ -49,6 +44,26 @@ class redirectPage {
 
         fun expeditionCollection(ctx : Context) : Intent{
             val intent = Intent(ctx, ExpeditionCollectionActivity::class.java)
+            return intent
+        }
+
+        fun marketplace(ctx : Context) : Intent{
+            val intent = Intent(ctx, MarketplaceActivity::class.java)
+            return intent
+        }
+
+        fun redemption(ctx : Context) : Intent{
+            val intent = Intent(ctx, Redemptions::class.java)
+            return intent
+        }
+
+        fun productDetails(ctx : Context) : Intent{
+            val intent = Intent(ctx, ProductDetailsActivity::class.java)
+            return intent
+        }
+
+        fun landingPage(ctx : Context) : Intent{
+            val intent = Intent(ctx, LandingActivity::class.java)
             return intent
         }
     }

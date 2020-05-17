@@ -26,9 +26,11 @@
             android:paddingBottom="10dp">
 
             <ImageView
+                android:id="@+id/backCaret"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:src="@drawable/profile_picture_1" />
+                android:padding="10dp"
+                android:src="@drawable/chevronleft" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

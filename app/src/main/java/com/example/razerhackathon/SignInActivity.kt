@@ -66,17 +66,7 @@ class SignInActivity : AppCompatActivity() {
 
     }
 
-    override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
-
-        if (currentUser != null){
-            // Create an intent and redirect user to main activity
-            startActivity(redirectPage.mainActivity(this))
-            finish()
-        }
-    }
+  
 
     fun buttonSignInOnClick(view: View) {
         getLoginCredentials()

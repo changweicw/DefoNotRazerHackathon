@@ -30,7 +30,25 @@ class ClientInfo(
         sharedPref.commit()
     }
 
+
+
+
     fun createClient(){
         userDAO.createUser(this)
     }
+
+    companion object{
+        fun clearShared(ctx : Activity){
+
+            // Saving it into shared preferences
+            val sharedPref = sharedPref(ctx)
+            sharedPref.putValue(constants.USERNAME, "")
+            sharedPref.putValue(constants.LAST_NAME, "")
+            sharedPref.putValue(constants.FIRST_NAME, "")
+            sharedPref.putValue(constants.NRIC, "")
+            sharedPref.putValue(constants.EMAIL, "")
+            sharedPref.commit()
+        }
+    }
+
 }

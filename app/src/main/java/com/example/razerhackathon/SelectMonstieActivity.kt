@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.razerhackathon.Models.monstie
@@ -22,7 +23,8 @@ class SelectMonstieActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_select_monstie)
-
+        // Hiding the Activity Bar
+        getSupportActionBar()!!.hide();
         // Getting the slot number from the previous intent
         val slotNumber : Int = intent.getIntExtra(constants.SLOT_NUMBER, 0)
 
@@ -31,8 +33,12 @@ class SelectMonstieActivity : AppCompatActivity() {
 
 //        val firstSlot = shared.getString(constants.FIRST_SLOT, "")!!
 //        toast.toastShort(this, firstSlot)
+        val backBtn : ImageView = findViewById(R.id.backCaret)
+        backBtn.setOnClickListener{
+            finish()
+        }
 
-        toast.toastShort(this, username)
+//        toast.toastShort(this, username)
         val context = this
         // Receive the index number.
         MainScope().launch {

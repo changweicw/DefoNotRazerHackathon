@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:layout_height="match_parent"
+    tools:context=".ProductDetailsActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        tools:context=".ProductDetailsActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Fake Activity Bar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/backCaret"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:padding="10dp"
+                    android:src="@drawable/chevronleft" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="-17dp"
+                        android:gravity="center"
+                        android:text="Product Detail"
+                        android:textColor="#fafafa"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageViewPD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/shopping_1"
+                android:adjustViewBounds="true" />
+            <TextView
+                android:id="@+id/textViewPDName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Product Name"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:textColor="#fafafa"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:src="@drawable/coins"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:layout_height="18dp"/>
+
+                <TextView
+                    android:id="@+id/textViewPDPrice"
+                    android:layout_marginLeft="8dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/razer_green"
+                    android:text="20,000"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="Valid Till"
+                android:textColor="#fff"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="1 June 2020"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="Valid Till"
+                android:textColor="#fff"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewPDDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="Lorem ipsum dolor sit amet consequeras siasdj wiwad"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+
+
+
+
+        </LinearLayout>
+        <Button
+            android:visibility="gone"
+            android:id="@+id/buttonPDRedeem"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/razer_green"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:text="Redeem"/>
+
+        <Button
+            android:visibility="gone"
+
+            android:id="@+id/buttonPDInsufficient"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#F44336"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:clickable="false"
+            android:textAllCaps="false"
+            android:text="Insufficient Amount"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/linearLayoutPDOverlay"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AC000000"/>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/linearLayoutDialog"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_gravity="center"
+        android:padding="15sp"
+        android:background="@drawable/item_mailbox_reward_breadcrumb">
+        <TextView
+            android:id="@+id/textViewPDCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:text="Would you like to redeem this with 20,000 coins?"/>
+
+        <TextView
+            android:id="@+id/textViewPDBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="6dp"
+            android:text="Remaining balance: 1000 coins"/>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/buttonCancel"
+
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="#7C7C7C"
+                android:background="@drawable/outline_button"
+                android:text="Cancel"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/buttonConfirm"
+
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:background="@color/razer_green"
+                android:text="Confirm"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

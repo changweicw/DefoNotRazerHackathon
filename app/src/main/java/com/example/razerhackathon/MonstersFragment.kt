@@ -37,7 +37,7 @@ class MonstersFragment : Fragment() {
         // Inflate the layout for this fragment
 
         val view: View = inflater.inflate(R.layout.fragment_monsters, container, false)
-        val buttonMonstie: Button = view.findViewById(R.id.Monstie_Test)
+//        val buttonMonstie: Button = view.findViewById(R.id.Monstie_Test)
 
         val shared = activity!!.getSharedPreferences(constants.PREF_NAME, Context.MODE_PRIVATE)
         username = shared.getString(constants.USERNAME, "")!!
@@ -50,12 +50,12 @@ class MonstersFragment : Fragment() {
         recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewMonstie)
         refreshPage()
 
-        buttonMonstie.setOnClickListener {
-            MainScope().launch {
-                monstie.getMonstieListByRarity(username)
-                refreshPage()
-            }
-        }
+//        buttonMonstie.setOnClickListener {
+//            MainScope().launch {
+//                monstie.getMonstieListByRarity(username)
+//                refreshPage()
+//            }
+//        }
         return view
     }
 

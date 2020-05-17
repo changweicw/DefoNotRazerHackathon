@@ -11,17 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".ExpeditionCollectionActivity"></activity>
+        <activity android:name=".Redemptions"></activity>
+        <activity android:name=".ProductDetailsActivity" />
+        <activity android:name=".MarketplaceActivity"/>
+        <activity android:name=".ExpeditionCollectionActivity" />
         <activity android:name=".SelectMonstieActivity" />
         <activity android:name=".CustomizeExpeditionActivity" />
         <activity android:name=".RazerPayActivity" />
-
         <activity android:name=".Register2Activity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MailboxActivity" />
-        <activity android:name=".TopUpMethodActivity"/>
-        <activity android:name=".TopUpActivity"/>
+        <activity android:name=".TopUpMethodActivity" />
+        <activity android:name=".TopUpActivity" />
         <activity android:name=".LandingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,10 +30,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignInActivity"/>
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

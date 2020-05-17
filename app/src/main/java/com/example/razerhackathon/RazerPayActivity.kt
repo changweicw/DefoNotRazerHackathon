@@ -1,15 +1,21 @@
 package com.example.razerhackathon
 
+
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
-import com.example.razerhackathon.Models.monstieLoadout
+import com.example.razerhackathon.Models.ClientInfo
 import com.example.razerhackathon.global.constants
 import com.example.razerhackathon.global.redirectPage
 import com.example.razerhackathon.global.toast
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
+
 
 class RazerPayActivity : AppCompatActivity() {
 
@@ -37,10 +43,39 @@ class RazerPayActivity : AppCompatActivity() {
         // Get Shared preference and toast!
         val shared = getSharedPreferences(constants.PREF_NAME, Context.MODE_PRIVATE)
         val username = shared.getString(constants.USERNAME, "")
+        val first_name = shared.getString(constants.FIRST_NAME, "")
         val email = shared.getString(constants.EMAIL, "")
 
-        toast.toastShort(this, username!!)
-        toast.toastShort(this, email!!)
+//        toast.toastShort(this, username!!)
+//        toast.toastShort(this, email!!)
+        /** Setting the name **/
+        val userName : TextView = findViewById(R.id.userName)
+        userName.text = first_name
+
+        /** LOGOUT **/
+        val buttonLogout : ImageView = findViewById(R.id.buttonLogout)
+        buttonLogout.setOnClickListener{
+            ClientInfo.clearShared(this)
+            startActivity(redirectPage.landingPage(this))
+            finish()
+        }
+
+
+        val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        /** Menu navigation **/
+        bottom_navigation.setOnNavigationItemSelectedListener(
+            object : BottomNavigationView.OnNavigationItemSelectedListener {
+                override fun onNavigationItemSelected(item: MenuItem): Boolean {
+                    when (item.getItemId()) {
+                        R.id.menuMarketPlace -> {
+                            startActivity(redirectPage.marketplace(this@RazerPayActivity))
+                            finish()
+                        }
+                    }
+                    return true
+                }
+            })
     }
 
     fun buttonBellOnClick(view: View) {

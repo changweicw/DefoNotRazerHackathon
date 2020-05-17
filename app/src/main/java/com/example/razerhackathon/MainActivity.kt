@@ -68,8 +68,8 @@ class MainActivity : AppCompatActivity() {
         val username = shared.getString(constants.USERNAME, "")
         val email = shared.getString(constants.EMAIL, "")
 
-        toast.toastShort(this, username!!)
-        toast.toastShort(this, email!!)
+//        toast.toastShort(this, username!!)
+//        toast.toastShort(this, email!!)
     }
 
 

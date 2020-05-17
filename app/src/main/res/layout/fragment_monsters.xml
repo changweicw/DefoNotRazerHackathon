@@ -81,11 +81,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:orientation="vertical">
-        <Button
-            android:id="@+id/Monstie_Test"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="get Monstie Test" />
+<!--        <Button-->
+<!--            android:id="@+id/Monstie_Test"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="get Monstie Test" />-->
         </LinearLayout>
     </LinearLayout>
 
