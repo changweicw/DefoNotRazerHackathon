@@ -84,7 +84,7 @@ class MonstersFragment : Fragment() {
             Log.d("Check Redeem Value: ", shared.getInt(constants.REDEEMCOUNTER, 0).toString())
         }
 
->>>>>>> 622708064feff71417d0e97d3521f93804ee8869
+
         return view
     }
 
