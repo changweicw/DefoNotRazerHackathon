@@ -14,11 +14,66 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Monster Incubator"
+                android:textStyle="bold"
+                android:textColor="#F2F2F2"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$"
+                    android:textColor="@color/razer_green"/>
+
+                <TextView
+                    android:id="@+id/depositValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="90"
+                    android:textColor="@color/razer_green"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" / $200"
+                    android:textColor="#F2F2F2"/>
+
+            </LinearLayout>
+
+
+            <ProgressBar
+                android:id="@+id/depositProgressBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progress="45"
+                android:progressTint="@color/razer_green"
+                android:background="#2D2E44"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="15dp">
 
             <!-- Monster Status -->
             <LinearLayout
+                android:id="@+id/redeemAnchor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/item_monster_card"

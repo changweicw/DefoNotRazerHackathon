@@ -13,8 +13,6 @@ import com.example.razerhackathon.db.userDAO
 
 import com.example.razerhackathon.global.constants
 
-
-
 import com.example.razerhackathon.global.constants.Companion.logSignIn
 
 import com.example.razerhackathon.global.redirectPage
