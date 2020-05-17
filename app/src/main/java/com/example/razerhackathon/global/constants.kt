@@ -69,8 +69,6 @@ class constants {
         val MAX_EXPEDITION = 3
 
 
-        // CHEAT FIELDS
-        val SHORTCUT_EMAIL = "fifi@g.com"
-        val SHORTCUT_PASSWORD = "123456"
+
     }
 }

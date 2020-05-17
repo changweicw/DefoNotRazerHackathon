@@ -50,11 +50,7 @@ class SignInActivity : AppCompatActivity() {
         auth = Firebase.auth
 
 
-        /**
-         * CHEAT:
-         */
-        textboxUsername.setText(constants.SHORTCUT_EMAIL)
-        textboxPassword.setText(constants.SHORTCUT_PASSWORD)
+
 
         val redirectLanding = findViewById<ImageButton>(R.id.backToLanding)
         redirectLanding.setOnClickListener {

@@ -50,10 +50,7 @@ class Register2Activity : AppCompatActivity() {
         val returnToRegisterOne = findViewById<ImageButton>(R.id.backToRegisterOne)
         auth = Firebase.auth
 
-        /**
-         * CHEAT:
-         */
-        editTextEmail.setText(constants.SHORTCUT_EMAIL)
+
 
         buttonRegister.setOnClickListener {
             // Getting all the values from textbox
