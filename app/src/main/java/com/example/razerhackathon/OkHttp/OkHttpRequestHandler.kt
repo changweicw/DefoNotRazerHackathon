@@ -25,7 +25,7 @@ object OkHttpRequestHandler {
         val url = "https://razerhackathon.sandbox.mambu.com/api/clients/"
         val payload = "{" +
                 "\"client\":{\"firstName\":\"${newClient.firstName}\",\"lastName\":\"${newClient.lastName}\",\"preferredLanguage\":\"ENGLISH\",\"notes\":\"TEMPORARY PLACEHOLDER\",\"assignedBranchKey\":\"${constants.ASSIGNED_BRANCH_KEY}\"}," +
-                "\"idDocuments\":[{\"identificationDocumentTemplateKey\":\"8a8e867271bd280c0171bf7e4ec71b01\",\"issuingAuthority\":\"Immigration Authority of Singapore\",\"documentType\":\"NRIC/Passport Number\",\"validUntil\":\"${newClient.NRIC_Issued}\",\"documentId\":\"${newClient.NRIC}\"}]," +
+                "\"idDocuments\":[{\"identificationDocumentTemplateKey\":\"8a8e867271bd280c0171bf7e4ec71b01\",\"issuingAuthority\":\"Immigration Authority of Singapore\",\"documentType\":\"NRIC/Passport Number\",\"validUntil\":\"2020-12-31\",\"documentId\":\"${newClient.NRIC}\"}]," +
                 "\"addresses\":[]" +
                 "}"
         var myClient = OkHttpClient()
